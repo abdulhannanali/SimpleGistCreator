@@ -15,8 +15,11 @@ module.exports = function (octopus) {
 		addGist: function (gist, length) {
 			var gistItem = $(this.gistItemTemplate.render(gist))
 
+			// finding the .clearGist parent and attaching an event handler to it
 			gistItem.find(".clearGist")
-				.click(this.clearGist)
+				.click(function (event) {
+					this.clearGist(event.target)
+				}.bind(this))
 
 			$("#gistsListView").append(gistItem)
 
@@ -33,16 +36,16 @@ module.exports = function (octopus) {
 
 			this.gistsListView.innerHTML = gistsHTML
 
-			this.updateGistsCount()		
+			this.updateGistsCount()	
 			$(".clearGist").click(function (event) {
 				this.clearGist(event.target)
-				this.updateGistsCount()
 			}.bind(this))
 		},
 		clearGist: function (target) {
 			var id = $(target).data("id")
 			octopus.removeGist(id)
 			$(target).parent(".gistsListItem").remove()
+			this.updateGistsCount()
 		},
 		updateGistsCount: function () {
 			var count = octopus.getGistsLength()
