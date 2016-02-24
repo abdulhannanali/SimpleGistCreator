@@ -2,11 +2,47 @@
 <html>
 <head>
 	<title>SimpleGistCreator</title>
+	<link rel="shortcut icon" type="image/icom" href="favicon.ico">
 </head>
 <body>
-	
+	<h2>Simple Gist Creation tool</h2>
+	<div id="editView">
+		<input type="text" id="gistDescription" placeholder="Enter details about gist here"/>
+		<br>
+		<input type="text" id="gistFilename" placeholder="Enter the name of the file here">
+		<button id="submitGist">Submit gist!</button>
+		<br>
+		<textarea id="gistContent" rows="30" cols="150" placeholder="Enter the content of the file here"></textarea>
 
-	<script type="text/javascript" src="bower_components/store-js/store.min.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+	</div>
+
+	<h3 id="gistsCount"></h3>
+	<div id="gistsListView"></div>
+
+	<script type="text/x-jsrender" id="template-gistItem">
+		<div class="gistsListItem">
+			<h3 style="color:green;">{{:description}}</h3>
+			<h4>Gist URL: <a href="{{:html_url}}">{{:html_url}}</a></h4>
+			<button class="clearGist" data-id="{{:id}}">Clear this Gist</button>
+			<h5>Further details about this gist</h5>
+			<ul>
+				{{if public}}
+					<li><b>This gist is public</b></li>
+				{{else}}
+					<li><b>This gist is not public</b></li>
+				{{/if}}
+				<li>Created at: {{:created_at}}</li>
+				<li>Updated at: {{:updated_at}}</li>
+				<li>
+					<ul>{{props files}}
+						<li>filename: {{:key}}</li>
+						<li>RAW Url: <a href="{{:prop.raw_url}}">Link</a></li>
+						<li>type: {{:prop.type}}</li>
+					{{/props}}</ul>
+				</li>
+			</ul>
+		</div>
+	</script>
+	<script type="text/javascript" src="build.js"></script>	
 </body>
 </html>

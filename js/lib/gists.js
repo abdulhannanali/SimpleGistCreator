@@ -20,6 +20,7 @@ module.exports = function () {
 
 		data["public"] = pub || false
 
+		data.description = description
 		data.files[filename] = {}
 		data.files[filename].content = content
 

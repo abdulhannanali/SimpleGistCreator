@@ -1,0 +1,26 @@
+{
+  "name": "simple-gist-creator",
+  "version": "1.0.0",
+  "description": "A gist creation tool which uses store.js in order to store the previous urls.",
+  "main": "build.js",
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "jsrender": "^0.9.73",
+    "store": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulhannanali/SimpleGistCreator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdulhannanali/SimpleGistCreator/issues"
+  },
+  "homepage": "https://github.com/abdulhannanali/SimpleGistCreator#readme"
+}
