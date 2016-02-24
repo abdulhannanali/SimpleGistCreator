@@ -13,5 +13,19 @@ Following are the libraries I used for this application
 - jQuery (for basic DOM manipulation and AJAX requests)
 - jsRender (for templating)
 
+### Running on your computer
+
+Building the javascript requires [node.js](https://nodejs.org) and npm installed.
+After cloning this repo run `npm install` in order to install all the dependencies
+and you can run simple browserify commands to rebuild all the javascript in `build.js`
+
+One such command in the root directory of the repo can be
+```
+browserify js/app.js -d -o build.js
+```
+
+This command will build all the reuqired code  in build.js
+You can modify it according to your own needs.
+
 ## LICENSE
 MIT LICENSE. SEE [LICENSE] for more details
