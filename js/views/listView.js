@@ -10,6 +10,8 @@ module.exports = function (octopus) {
 
 			this.gistItemTemplate = $.templates("#template-gistItem")
 
+			$("#template-gistItem").remove()
+
 			this.render(octopus.getAllGists())
 		},
 		addGist: function (gist, length) {
