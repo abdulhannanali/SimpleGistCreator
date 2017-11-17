@@ -1,5 +1,7 @@
 # SimpleGistCreator
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/abdulhannanali/SimpleGistCreator.svg)](https://greenkeeper.io/)
+
 DEMO: https://abdulhannanali.github.io/SimpleGistCreator/
 
 SimpleGistCreator is an HTML5 Based Web Application which uses store.js to store data on the client's computer which is one of it's most important functionality. 
